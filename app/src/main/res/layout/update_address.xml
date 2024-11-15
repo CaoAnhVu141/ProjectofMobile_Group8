@@ -2,6 +2,162 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#F5F5F5">
+        
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_back"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Cập nhật địa chỉ"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
 </LinearLayout>
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF">
+
+<!--Họ và tên-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ và tên"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="8dp"/>
+            
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập họ và tên"
+                android:padding="14dp"
+                android:inputType="textPersonName"
+                android:background="@drawable/rounded_border"
+                android:textSize="15dp"/>
+
+<!--Số điện thoại-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập địa chỉ"
+                android:padding="14dp"
+                android:inputType="phone"
+                android:background="@drawable/rounded_border"
+                android:textSize="15dp"/>
+
+<!--Địa chỉ-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:paddingTop="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập tỉnh"
+                android:background="@drawable/rounded_border"
+                android:padding="12dp"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập huyện"
+                android:background="@drawable/rounded_border"
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập xã"
+                android:background="@drawable/rounded_border"
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+
+<!--Loại địa chỉ-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loại địa chỉ"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:paddingTop="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhà riêng"
+                    android:buttonTint="#007AFF"
+                    android:background="@drawable/radio_button_background"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:textColor="#007AFF"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_button_background"
+                    android:buttonTint="#007AFF"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:text="Công ty"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+</LinearLayout>
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu địa chỉ"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2C68A8"
+        android:layout_margin="16dp"
+        android:paddingVertical="12dp"/>
+</LinearLayout>
+
+    
