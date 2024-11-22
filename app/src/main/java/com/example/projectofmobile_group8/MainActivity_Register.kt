@@ -10,33 +10,30 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-private lateinit var editTaiKhoan: EditText
-private lateinit var editPassWord: EditText
-private lateinit var btnDangNhap: Button
-private lateinit var tvDangKy: TextView
+
+private lateinit var btnDangKy: Button
+private lateinit var tvDangNhap: TextView
 private lateinit var tvForgot: TextView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity_Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
         setControl()
         setEvent()
     }
 
     private fun setControl() {
-        editTaiKhoan = findViewById(R.id.editEmail)
-        editPassWord = findViewById(R.id.editPassword)
-        btnDangNhap = findViewById(R.id.btnDangNhap)
-        tvDangKy = findViewById(R.id.tvDangKy)
+        btnDangKy = findViewById(R.id.btnDangKy)
+        tvDangNhap = findViewById(R.id.tvDangNhap)
         tvForgot = findViewById(R.id.tvForgot)
     }
 
     private fun setEvent() {
-        tvDangKy.setOnClickListener {
-            val intent = Intent(this, MainActivity_Register::class.java)
+        tvDangNhap.setOnClickListener {
+            val intent = Intent(this, MainActivity_Login::class.java)
             startActivity(intent)
         }
         tvForgot.setOnClickListener {

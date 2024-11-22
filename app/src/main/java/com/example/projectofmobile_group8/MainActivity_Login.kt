@@ -10,13 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-private lateinit var editTaiKhoan: EditText
-private lateinit var editPassWord: EditText
-private lateinit var btnDangNhap: Button
-private lateinit var tvDangKy: TextView
-private lateinit var tvForgot: TextView
+private lateinit var editTaiKhoan:EditText
+private lateinit var editPassWord:EditText
+private lateinit var btnDangNhap:Button
+private lateinit var tvDangKy:TextView
+private lateinit var tvForgot:TextView
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity_Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         setEvent()
     }
 
-    private fun setControl() {
+    private fun setControl()
+    {
         editTaiKhoan = findViewById(R.id.editEmail)
         editPassWord = findViewById(R.id.editPassword)
         btnDangNhap = findViewById(R.id.btnDangNhap)
