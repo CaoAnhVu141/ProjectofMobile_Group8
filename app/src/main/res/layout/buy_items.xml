@@ -37,12 +37,15 @@
     <!-- Shipping Information -->
 
     <LinearLayout
+        android:id="@+id/llusserinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#FFFFFF"
         android:padding="12dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -139,13 +142,16 @@
 
     <!-- Payment Method Section -->
     <LinearLayout
+        android:id="@+id/llattribute"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
         android:padding="12dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -270,6 +276,7 @@
 
     <!-- Place Order Button -->
     <Button
+        android:id="@+id/btnOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đặt hàng"

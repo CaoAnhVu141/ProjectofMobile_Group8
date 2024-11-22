@@ -12,12 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectofMobile_Group8"
         tools:targetApi="31">
+        <activity android:name=".MainActivity_Forgot"/>
+        <activity android:name=".MainActivity_Register"/>
+        <activity android:name=".MainActivity_CaptCha"/>
+        <activity android:name=".MainActivity_ForgotPassword"/>
+        <activity android:name=".MainActivity_Notification"/>
+        <activity android:name=".user_update_activity" />
+        <activity android:name=".paymentsucces" />
+
+        <activity android:name=".payment_activity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".buy_items_activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
