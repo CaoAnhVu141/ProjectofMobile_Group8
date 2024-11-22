@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 private lateinit var btnTroLai: Button
+private lateinit var btnGuiYeuCau: Button
 
 
 class MainActivity_Forgot : AppCompatActivity() {
@@ -23,11 +24,16 @@ class MainActivity_Forgot : AppCompatActivity() {
 
     private fun setControl() {
         btnTroLai = findViewById(R.id.btnTroLai)
+        btnGuiYeuCau = findViewById(R.id.btnGuiYeuCau)
 
     }
     private fun setEvent() {
         btnTroLai.setOnClickListener {
             val intent = Intent(this, MainActivity_Login::class.java)
+            startActivity(intent)
+        }
+        btnGuiYeuCau.setOnClickListener{
+            val intent = Intent(this, MainActivity_ForgotPassword::class.java)
             startActivity(intent)
         }
     }

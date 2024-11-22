@@ -23,6 +23,9 @@
         </activity>
         <activity android:name=".MainActivity_Forgot"></activity>
         <activity android:name=".MainActivity_Register"></activity>
+        <activity android:name=".MainActivity_CaptCha"></activity>
+        <activity android:name=".MainActivity_ForgotPassword"></activity>
+        <activity android:name=".MainActivity_Notification"></activity>
     </application>
 
 </manifest>
