@@ -4,4 +4,136 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng Ký"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:textSize="35dp"
+        android:padding="16dp"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Vào Email"
+        ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số Điện Thoại"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editSDT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Vào Số Điện Thoại"
+        android:inputType="text"
+        ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Họ Và Tên"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editHoTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Vào Họ Và Tên"
+        android:inputType="text"
+        ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mật Khẩu"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editPassword1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Vào Password"
+        android:inputType="textPassword"
+        ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập Lại Mật Khẩu"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mật khẩu"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:backgroundTint="#DADADA"
+        android:layout_marginBottom="10dp"
+        ></EditText>
+
+    <Button
+        android:id="@+id/btnDangKy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng Ký"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF5722"
+        ></Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvDangNhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Nhập"
+            android:textColor="#FF6E40"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tvForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quên mật khẩu?"
+            android:textColor="#FF6E40"/>
+    </LinearLayout>
 </LinearLayout>
