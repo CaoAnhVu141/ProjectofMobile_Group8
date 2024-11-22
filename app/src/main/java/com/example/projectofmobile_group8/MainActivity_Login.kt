@@ -36,13 +36,13 @@ class MainActivity_Login : AppCompatActivity() {
         tvForgot = findViewById(R.id.tvForgot)
     }
 
-    private fun setEvent(){
-        tvDangKy.setOnClickListener{
+    private fun setEvent() {
+        tvDangKy.setOnClickListener {
             val intent = Intent(this, MainActivity_Register::class.java)
             startActivity(intent)
         }
-        btnDangNhap.setOnClickListener{
-            val intent = Intent(this, MainActivity_Register::class.java)
+        tvForgot.setOnClickListener {
+            val intent = Intent(this, MainActivity_Forgot::class.java)
             startActivity(intent)
         }
     }

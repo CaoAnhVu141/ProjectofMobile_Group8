@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ProjectofMobile_Group8"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity_Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity_Login"></activity>
         <activity android:name=".MainActivity_Forgot"></activity>
         <activity android:name=".MainActivity_Register"></activity>
     </application>

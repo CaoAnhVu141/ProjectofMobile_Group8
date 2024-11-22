@@ -27,7 +27,7 @@ class MainActivity_Forgot : AppCompatActivity() {
     }
     private fun setEvent() {
         btnTroLai.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity_Login::class.java)
             startActivity(intent)
         }
     }

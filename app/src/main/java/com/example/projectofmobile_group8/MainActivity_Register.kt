@@ -33,7 +33,7 @@ class MainActivity_Register : AppCompatActivity() {
 
     private fun setEvent() {
         tvDangNhap.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity_Login::class.java)
             startActivity(intent)
         }
         tvForgot.setOnClickListener {
