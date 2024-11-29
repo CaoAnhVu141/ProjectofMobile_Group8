@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Back button -->
+    <!-- Nút quay lại -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="Back Icon"
+        android:src="@android:drawable/ic_menu_revert" />
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/productImage"
+        android:src="@drawable/giay"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:src="@drawable/giay"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp" />
+        <ImageView
+            android:src="@drawable/giay2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp" />
+        <ImageView
+            android:src="@drawable/giay3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Product Name -->
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nike Air Jordan 1 Nam Nữ - Trắng Đen"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <!-- Product Price -->
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.999.000 đ"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_marginTop="8dp" />
+
+    <!-- Product Description -->
+    <TextView
+        android:id="@+id/productDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thiết Kế: màu trắng sang trọng, dễ cao su chống trượt an toàn..."
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginTop="10dp" />
+
+    <!-- Product Size Selection -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size:"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp" />
+    <Spinner
+        android:id="@+id/sizeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="12dp"
+        android:entries="@array/size_array"
+        android:layout_marginTop="8dp" />
+
+    <!-- Quantity Controls -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/btnDecrease"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:text="-"
+        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btnDecrease1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:text="+"
+        android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Add to Cart Button -->
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#FF5722"
+        android:text="Add to Cart"
+        android:textColor="#ffffff"
+        tools:ignore="TextContrastCheck" />
+
+</LinearLayout>
