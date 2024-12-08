@@ -33,6 +33,7 @@
 
             <!-- Icon Cart -->
             <ImageView
+                android:id="@+id/ivCart"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_cart"
@@ -64,6 +65,7 @@
 
             <!-- Sản phẩm 1 -->
             <LinearLayout
+                android:id="@+id/llSanpham1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -98,6 +100,7 @@
 
             <!-- Sản phẩm 2 -->
             <LinearLayout
+                android:id="@+id/llSanpham2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -132,6 +135,7 @@
 
             <!-- Sản phẩm 3 -->
             <LinearLayout
+                android:id="@+id/llSanpham3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -166,6 +170,7 @@
 
             <!-- Sản phẩm 4 -->
             <LinearLayout
+                android:id="@+id/llSanpham4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"

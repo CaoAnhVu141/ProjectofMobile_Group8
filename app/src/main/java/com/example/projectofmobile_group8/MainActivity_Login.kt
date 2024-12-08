@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 private lateinit var editTaiKhoan:EditText
 private lateinit var editPassWord:EditText
 private lateinit var btnDangNhap:Button
+private lateinit var btnDangNhapAdmin:Button
 private lateinit var tvDangKy:TextView
 private lateinit var tvForgot:TextView
 
@@ -32,6 +33,7 @@ class MainActivity_Login : AppCompatActivity() {
         editTaiKhoan = findViewById(R.id.editEmail)
         editPassWord = findViewById(R.id.editPassword)
         btnDangNhap = findViewById(R.id.btnDangNhap)
+        btnDangNhapAdmin = findViewById(R.id.btnDangNhapadmin)
         tvDangKy = findViewById(R.id.tvDangKy)
         tvForgot = findViewById(R.id.tvForgot)
     }
@@ -46,7 +48,11 @@ class MainActivity_Login : AppCompatActivity() {
             startActivity(intent)
         }
         btnDangNhap.setOnClickListener{
-            val intent = Intent(this, payment_activity::class.java)
+            val intent = Intent(this, sanphamnoibat::class.java)
+            startActivity(intent)
+        }
+        btnDangNhapAdmin.setOnClickListener{
+            val intent = Intent(this, crud_user::class.java)
             startActivity(intent)
         }
     }

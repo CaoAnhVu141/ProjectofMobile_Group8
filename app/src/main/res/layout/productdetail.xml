@@ -9,6 +9,7 @@
     <!-- Back button -->
     <!-- Nút quay lại -->
     <ImageView
+        android:id="@+id/ivBack"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:contentDescription="Back Icon"

@@ -59,7 +59,15 @@
         android:backgroundTint="#FF5722"
         android:textStyle="bold"
         ></Button>
-
+    <Button
+        android:id="@+id/btnDangNhapadmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF5722"
+        android:textStyle="bold"
+        ></Button>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
