@@ -20,15 +20,15 @@
         <activity android:name=".payment_activity" />
         <activity android:name=".paymentsucces" />
         <activity android:name=".sanphamnoibat" />
-        <activity android:name=".crud_user" />
+<!--        <activity android:name=".crud_user" />-->
         <activity android:name=".add_user" />
         <activity android:name=".user_update" />
         <activity android:name=".productdetail" />
-<!--        <activity android:name=".MainActivity_Login" />-->
+        <activity android:name=".MainActivity_Login" />
         <activity android:name=".shopping_cart" />
         <activity android:name=".buy_items_activity" />
         <activity
-            android:name=".MainActivity_Login"
+            android:name=".crud_user"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
