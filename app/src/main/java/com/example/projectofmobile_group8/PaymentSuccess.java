@@ -9,16 +9,14 @@ public class PaymentSuccess extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buy_items); // Gắn file XML cho màn hình 1
+        setContentView(R.layout.payment_success);
+        setControl();
+        setEvent();
+    }
 
-        Button btnGoToSecond = findViewById(R.id.btn_order); // Nút chuyển qua màn hình 2
-//        btnGoToSecond.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Chuyển tới SecondActivity
-//                Intent intent = new Intent(PaymentSuccess.this, SecondActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+    private void setEvent() {
+    }
+
+    private void setControl() {
     }
 }

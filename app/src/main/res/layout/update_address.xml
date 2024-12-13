@@ -13,6 +13,7 @@
         android:background="#F5F5F5">
         
         <ImageView
+            android:id="@+id/btnBacktobuy_items"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/icon_back"/>
@@ -46,6 +47,7 @@
                 android:paddingTop="8dp"/>
             
             <EditText
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nhập họ và tên"
@@ -65,9 +67,10 @@
                 android:paddingTop="12dp"/>
 
             <EditText
+                android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nhập địa chỉ"
+                android:hint="Nhập số điện thoại"
                 android:padding="14dp"
                 android:inputType="phone"
                 android:background="@drawable/rounded_border"
@@ -79,11 +82,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Địa chỉ"
-                android:textSize="14sp"
+                android:textSize="20dp"
                 android:textColor="#000000"
                 android:paddingTop="12dp"/>
 
             <EditText
+                android:id="@+id/etTinh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nhập tỉnh"
@@ -92,6 +96,7 @@
                 android:textSize="14sp"/>
 
             <EditText
+                android:id="@+id/etHuyen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nhập huyện"
@@ -101,6 +106,7 @@
                 android:layout_marginTop="8dp"/>
 
             <EditText
+                android:id="@+id/etXa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nhập xã"
@@ -114,40 +120,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Loại địa chỉ"
-                android:textSize="14sp"
+                android:textSize="20dp"
                 android:textColor="#000000"
                 android:paddingTop="12dp"/>
 
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/rgAddressType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:gravity="center_vertical">
+                android:paddingTop="8dp">
 
                 <RadioButton
+                    android:id="@+id/rbNhaRieng"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nhà riêng"
                     android:buttonTint="#007AFF"
-                    android:background="@drawable/radio_button_background"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="8dp"
                     android:textColor="#007AFF"
                     android:textSize="14sp"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp" />
 
                 <RadioButton
+                    android:id="@+id/rbCongTy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/radio_button_background"
-                    android:buttonTint="#007AFF"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="8dp"
                     android:text="Công ty"
+                    android:buttonTint="#007AFF"
                     android:textColor="#000000"
                     android:textSize="14sp" />
-            </LinearLayout>
+            </RadioGroup>
 </LinearLayout>
     <Button
         android:id="@+id/saveButton"

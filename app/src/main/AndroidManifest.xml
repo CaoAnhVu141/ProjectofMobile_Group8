@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".UpdateAddressActivity" />
+        <activity android:name=".PaymentMethodActivity" />
+        <activity android:name=".PaymentSuccess" />
     </application>
 
 </manifest>
