@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ProjectofMobile_Group8"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".UserListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,11 @@
         <activity android:name=".UpdateAddressActivity" />
         <activity android:name=".PaymentMethodActivity" />
         <activity android:name=".PaymentSuccess" />
+<!--        <activity android:name=".UserListActivity" />-->
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".EditUserActivity" />
+
+
     </application>
 
 </manifest>
