@@ -51,7 +51,6 @@ class MainActivity_Login : AppCompatActivity() {
             val intent = Intent(this, MainActivity_Register::class.java)
             startActivity(intent)
         }
-
         // Sự kiện Quên mật khẩu
         tvForgot.setOnClickListener {
             val intent = Intent(this, MainActivity_Forgot::class.java)
@@ -69,7 +68,7 @@ class MainActivity_Login : AppCompatActivity() {
                 val isValidLogin = databaseHelper.checkLogin(email, password)
                 if (isValidLogin) {
                     // Đăng nhập thành công, chuyển màn hình
-                    val intent = Intent(this, MainActivity_Register::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish() // Đóng màn hình đăng nhập
                 } else {

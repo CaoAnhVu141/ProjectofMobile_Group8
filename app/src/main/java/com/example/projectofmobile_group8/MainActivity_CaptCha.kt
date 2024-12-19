@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
+private lateinit var email: String
 private lateinit var btnConfirm: Button
 
 class MainActivity_CaptCha : AppCompatActivity() {
@@ -13,6 +14,8 @@ class MainActivity_CaptCha : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.forgot_captcha_items)
+        // Nhận email từ Intent
+        email = intent.getStringExtra("email") ?: ""
 
         setControl()
         setEvent()
@@ -23,12 +26,11 @@ class MainActivity_CaptCha : AppCompatActivity() {
     }
 
     private fun setEvent() {
-
         btnConfirm.setOnClickListener {
-            btnConfirm.setOnClickListener {
-                val intent = Intent(this, MainActivity_ForgotPassword::class.java)
-                startActivity(intent)
-            }
+            // Khi CAPTCHA hợp lệ, chuyển sang MainActivity_ForgotPassword và truyền email
+            val intent = Intent(this, MainActivity_ForgotPassword::class.java)
+            intent.putExtra("email", email) // Truyền email vào MainActivity_ForgotPassword
+            startActivity(intent)
         }
     }
 }
