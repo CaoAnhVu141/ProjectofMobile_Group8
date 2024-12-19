@@ -55,14 +55,15 @@
             android:textColor="#666666" />
     </LinearLayout>
 
-    <!-- Product Item List -->
-    <ListView
-        android:id="@+id/lv_products"
+    <!-- Product Item List (Replaced ListView with RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_products"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:dividerHeight="1dp"
+        android:paddingBottom="8dp" />
 
     <!-- Total Price -->
     <LinearLayout
