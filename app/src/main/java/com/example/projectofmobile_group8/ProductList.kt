@@ -1,4 +1,4 @@
-package com.example.productwithdb
+package com.example.projectofmobile_group8
 
 import android.os.Bundle
 import android.text.Editable
@@ -15,9 +15,9 @@ import com.google.android.material.tabs.TabLayout
 class ProductList : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var productAdapter: ProductAdapter
-    private lateinit var productList: MutableList<Product>
-    private lateinit var filteredProductList: MutableList<Product>
+    private lateinit var productAdapter: HomeProductAdapter
+    private lateinit var productList: MutableList<HomeProduct>
+    private lateinit var filteredProductList: MutableList<HomeProduct>
     private lateinit var searchEditText: EditText
     private lateinit var tabLayout: TabLayout
 
@@ -45,7 +45,7 @@ class ProductList : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         productList = createProductList()
         filteredProductList = productList.toMutableList()
-        productAdapter = ProductAdapter(filteredProductList)
+        productAdapter = HomeProductAdapter(filteredProductList)
         recyclerView.adapter = productAdapter
     }
 
@@ -125,22 +125,22 @@ class ProductList : AppCompatActivity() {
     }
 
     // Lấy danh sách sản phẩm bán chạy
-    private fun getBestSellingProducts(): List<Product> {
+    private fun getBestSellingProducts(): List<HomeProduct> {
         return productList.sortedByDescending { it.sales }
     }
 
     // Lấy danh sách sản phẩm mới nhất
-    private fun getNewestProducts(): List<Product> {
+    private fun getNewestProducts(): List<HomeProduct> {
         return productList.sortedByDescending { it.addedDate }
     }
 
     // Tạo danh sách sản phẩm mẫu
-    private fun createProductList(): MutableList<Product> {
+    private fun createProductList(): MutableList<HomeProduct> {
         return mutableListOf(
-            Product("Nike1", 19.99, "Cotton T-shirt", R.drawable.giay, listOf(R.drawable.giay, R.drawable.giay2, R.drawable.giay3), sales = 50, addedDate = 1700000000000),
-            Product("Nike2", 49.99, "Blue denim jeans", R.drawable.giay2, listOf(R.drawable.giay2, R.drawable.giay, R.drawable.giay3), sales = 120, addedDate = 1700100000000),
-            Product("Nike3", 59.99, "Winter Jacket", R.drawable.giay3, listOf(R.drawable.giay3, R.drawable.giay, R.drawable.giay2), sales = 70, addedDate = 1699900000000),
-            Product("Nike4", 79.99, "Running Shoes", R.drawable.giay, listOf(R.drawable.giay, R.drawable.giay3, R.drawable.giay2), sales = 30, addedDate = 1699800000000)
+            HomeProduct("Nike1", 19.99, "Cotton T-shirt", R.drawable.giay, listOf(R.drawable.giay, R.drawable.giay2, R.drawable.giay3), sales = 50, addedDate = 1700000000000),
+            HomeProduct("Nike2", 49.99, "Blue denim jeans", R.drawable.giay2, listOf(R.drawable.giay2, R.drawable.giay, R.drawable.giay3), sales = 120, addedDate = 1700100000000),
+            HomeProduct("Nike3", 59.99, "Winter Jacket", R.drawable.giay3, listOf(R.drawable.giay3, R.drawable.giay, R.drawable.giay2), sales = 70, addedDate = 1699900000000),
+            HomeProduct("Nike4", 79.99, "Running Shoes", R.drawable.giay, listOf(R.drawable.giay, R.drawable.giay3, R.drawable.giay2), sales = 30, addedDate = 1699800000000)
         )
     }
 

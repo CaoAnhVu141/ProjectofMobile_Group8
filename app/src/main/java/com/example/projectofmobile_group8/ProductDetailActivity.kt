@@ -1,4 +1,4 @@
-package com.example.productwithdb
+package com.example.projectofmobile_group8
 
 import android.os.Bundle
 import android.os.Handler

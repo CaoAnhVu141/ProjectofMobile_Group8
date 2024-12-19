@@ -53,4 +53,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation ("androidx.appcompat:appcompat:1.6.1")  // Thư viện AppCompat
+    implementation ("com.google.android.material:material:1.9.0")  // Thư viện Material Design
 }
