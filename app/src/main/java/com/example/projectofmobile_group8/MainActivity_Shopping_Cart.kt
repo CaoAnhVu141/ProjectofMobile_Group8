@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity_Shopping_Cart : AppCompatActivity() {
 
     private lateinit var listView: ListView
     private lateinit var tvTotalPrice: TextView

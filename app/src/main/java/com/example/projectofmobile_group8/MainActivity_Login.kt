@@ -8,8 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 private lateinit var editTaiKhoan: EditText
 private lateinit var editPassWord: EditText
@@ -68,7 +66,7 @@ class MainActivity_Login : AppCompatActivity() {
                 val isValidLogin = databaseHelper.checkLogin(email, password)
                 if (isValidLogin) {
                     // Đăng nhập thành công, chuyển màn hình
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, MainActivity_Shopping_Cart::class.java)
                     startActivity(intent)
                     finish() // Đóng màn hình đăng nhập
                 } else {
