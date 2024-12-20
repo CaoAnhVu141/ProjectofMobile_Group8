@@ -61,7 +61,7 @@ class PaymentActivity : AppCompatActivity() {
         llPaymentMethod = findViewById(R.id.llpaymentmethod)
         tvPaymentMethod = findViewById(R.id.tvPaymentMethod)
 
-        // Nhận dữ liệu từ Intent@Đổ  dữ liệu vào
+        // Nhận dữ liệu từ Intent @Đổ  dữ liệu vào từ trang giỏ hàng
         productList = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableArrayListExtra("productList", Product::class.java) ?: arrayListOf()
         } else {

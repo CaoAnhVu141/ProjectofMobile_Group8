@@ -23,18 +23,11 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
         Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
         Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
         Product("Puma RS-X", "1.800.000 vnd", 1, 1800000),
-        Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
-        Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
-        Product("Puma RS-X", "1.800.000 vnd", 1, 1800000),
-        Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
-        Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
-        Product("Puma RS-X", "1.800.000 vnd", 1, 1800000)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.shopping_cart)
-
         setControl()
         setEvent()
     }
@@ -51,6 +44,7 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
             onQuantityChange = { updateTotalPrice() },
             showButtons = true
         )
+        //Hiển thị dữ liệu lên
         listView.adapter = productAdapter
     }
 
@@ -60,7 +54,7 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
             if (productList.isNotEmpty()) {
                 val intent = Intent(this, PaymentActivity::class.java)
 
-                // Truyền danh sách sản phẩm và tổng tiền
+                // Truyền danh sách sản phẩm và tổng tiền qua trang mua hàng
                 intent.putParcelableArrayListExtra("productList", productList)
                 intent.putExtra("totalPrice", calculateTotalPrice())
 
