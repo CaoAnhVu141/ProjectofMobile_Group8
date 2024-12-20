@@ -62,16 +62,23 @@ class MainActivity_Login : AppCompatActivity() {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
             } else {
-                // Kiểm tra thông tin đăng nhập
-                val isValidLogin = databaseHelper.checkLogin(email, password)
-                if (isValidLogin) {
-                    // Đăng nhập thành công, chuyển màn hình
-                    val intent = Intent(this, MainActivity_Shopping_Cart::class.java)
-                    startActivity(intent)
-                    finish() // Đóng màn hình đăng nhập
-                } else {
+                // Lấy id_role từ cơ sở dữ liệu
+                val idRole = databaseHelper.getRoleByLogin(email, password)
+                if (idRole == -1) {
                     // Thông báo lỗi đăng nhập
                     Toast.makeText(this, "Email hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show()
+                } else {
+                    // Chuyển màn hình dựa trên id_role
+                    val intent = when (idRole) {
+                        1 -> Intent(this, UserListActivity::class.java)
+                        2 -> Intent(this, MainActivity_Register::class.java)
+                        else -> {
+                            Toast.makeText(this, "Không xác định quyền", Toast.LENGTH_SHORT).show()
+                            return@setOnClickListener
+                        }
+                    }
+                    startActivity(intent)
+                    finish() // Đóng màn hình đăng nhập
                 }
             }
         }
