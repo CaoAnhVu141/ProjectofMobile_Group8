@@ -61,7 +61,7 @@ class PaymentActivity : AppCompatActivity() {
         llPaymentMethod = findViewById(R.id.llpaymentmethod)
         tvPaymentMethod = findViewById(R.id.tvPaymentMethod)
 
-        // Nhận dữ liệu từ Intent@Đổ  dữ liệu vào
+        // Nhận dữ liệu từ Intent @Đổ  dữ liệu vào
         productList = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableArrayListExtra("productList", Product::class.java) ?: arrayListOf()
         } else {
@@ -85,7 +85,7 @@ class PaymentActivity : AppCompatActivity() {
     }
 
     private fun setEvent() {
-        // Xử lý sự kiện nhấn vào llInforUser
+        // Xử lý sự kiện nhấn vào InforUser
         llInforUser.setOnClickListener {
             val intent = Intent(this, UpdateAddressActivity::class.java)
             intent.putExtra("name", currentName)
@@ -104,7 +104,7 @@ class PaymentActivity : AppCompatActivity() {
             selectPaymentLauncher.launch(intent)
         }
 
-        // Cập nhật thông tin địa chỉ
+        // Cập nhật thông tin địa chỉ khách hàng
         updateAddressLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val data = result.data

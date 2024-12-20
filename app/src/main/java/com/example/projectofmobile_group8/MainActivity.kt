@@ -22,12 +22,6 @@ class MainActivity : AppCompatActivity() {
         Product("Puma RS-X", "1.800.000 vnd", 1, 1800000),
         Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
         Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
-        Product("Puma RS-X", "1.800.000 vnd", 1, 1800000),
-        Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
-        Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
-        Product("Puma RS-X", "1.800.000 vnd", 1, 1800000),
-        Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
-        Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
         Product("Puma RS-X", "1.800.000 vnd", 1, 1800000)
     )
 
@@ -51,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             onQuantityChange = { updateTotalPrice() },
             showButtons = true
         )
+        //thực thị hiển thị danh sách
         listView.adapter = productAdapter
     }
 
@@ -63,7 +58,6 @@ class MainActivity : AppCompatActivity() {
                 // Truyền danh sách sản phẩm và tổng tiền
                 intent.putParcelableArrayListExtra("productList", productList)
                 intent.putExtra("totalPrice", calculateTotalPrice())
-
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Giỏ hàng của bạn đang trống!", Toast.LENGTH_SHORT).show()
