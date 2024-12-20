@@ -56,14 +56,17 @@ class DatabaseHelper(private val context: Context) : SQLiteOpenHelper(context, D
         return SQLiteDatabase.openDatabase(databasePath, null, SQLiteDatabase.OPEN_READWRITE)
     }
 
-    fun checkLogin(email: String, password: String): Boolean {
+    fun getRoleByLogin(email: String, password: String): Int {
         val db = this.readableDatabase
-        val query = "SELECT * FROM user WHERE email = ? AND password = ?"
+        val query = "SELECT id_role FROM user WHERE email = ? AND password = ?"
         val cursor = db.rawQuery(query, arrayOf(email, password))
-        val isValidLogin = cursor.count > 0
+        var idRole = -1 // Giá trị mặc định nếu không tìm thấy
+        if (cursor.moveToFirst()) {
+            idRole = cursor.getInt(0) // Lấy giá trị của cột id_role
+        }
         cursor.close()
         db.close()
-        return isValidLogin
+        return idRole
     }
 
     // Hàm kiểm tra email trong cơ sở dữ liệu

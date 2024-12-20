@@ -18,10 +18,13 @@ class UserListActivity : AppCompatActivity() {
     private lateinit var adapter: UserAdapter
     private lateinit var addUserLauncher: ActivityResultLauncher<Intent>
     private lateinit var editUserLauncher: ActivityResultLauncher<Intent>
+    private lateinit var btnLogout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_list)
+        setControl()
+        setEvent()
 
         // Kết nối view
         lvUsers = findViewById(R.id.lvUsers)
@@ -50,29 +53,30 @@ class UserListActivity : AppCompatActivity() {
         lvUsers.adapter = adapter
 
         // Khởi tạo launcher cho màn hình chỉnh sửa người dùng
-        editUserLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data = result.data
-                if (data != null) {
-                    val position = data.getIntExtra("position", -1)
-                    if (position != -1) {
-                        val name = data.getStringExtra("name") ?: ""
-                        val username = data.getStringExtra("username") ?: ""
-                        val phone = data.getStringExtra("phone") ?: ""
-                        val email = data.getStringExtra("email") ?: ""
+        editUserLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val data = result.data
+                    if (data != null) {
+                        val position = data.getIntExtra("position", -1)
+                        if (position != -1) {
+                            val name = data.getStringExtra("name") ?: ""
+                            val username = data.getStringExtra("username") ?: ""
+                            val phone = data.getStringExtra("phone") ?: ""
+                            val email = data.getStringExtra("email") ?: ""
 
-                        val updatedUser = userList[position].copy(
-                            name = name,
-                            username = username,
-                            email = email,
-                            phone = phone
-                        )
-                        userList[position] = updatedUser
-                        adapter.notifyDataSetChanged()
+                            val updatedUser = userList[position].copy(
+                                name = name,
+                                username = username,
+                                email = email,
+                                phone = phone
+                            )
+                            userList[position] = updatedUser
+                            adapter.notifyDataSetChanged()
+                        }
                     }
                 }
             }
-        }
 
         // Sự kiện nút thêm người dùng
         btnAddUser.setOnClickListener {
@@ -80,24 +84,36 @@ class UserListActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        addUserLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data = result.data
-                if (data != null) {
-                    val name = data.getStringExtra("name") ?: ""
-                    val username = data.getStringExtra("username") ?: ""
-                    val email = data.getStringExtra("email") ?: ""
-                    val phone = data.getStringExtra("phone") ?: ""
-                    val password = data.getStringExtra("password") ?: ""
+        addUserLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val data = result.data
+                    if (data != null) {
+                        val name = data.getStringExtra("name") ?: ""
+                        val username = data.getStringExtra("username") ?: ""
+                        val email = data.getStringExtra("email") ?: ""
+                        val phone = data.getStringExtra("phone") ?: ""
+                        val password = data.getStringExtra("password") ?: ""
 
-                    userList.add(User(name, username, email, phone, password))
-                    adapter.notifyDataSetChanged()
+                        userList.add(User(name, username, email, phone, password))
+                        adapter.notifyDataSetChanged()
+                    }
                 }
             }
-        }
         btnAddUser.setOnClickListener {
             val intent = Intent(this, AddUserActivity::class.java)
             addUserLauncher.launch(intent)
+        }
+    }
+
+    private fun setControl() {
+        btnLogout = findViewById(R.id.btnLogout)
+    }
+
+    private fun setEvent() {
+        btnLogout.setOnClickListener {
+            val intent = Intent(this, MainActivity_Login::class.java)
+            startActivity(intent)
         }
     }
 }

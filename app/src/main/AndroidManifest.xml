@@ -25,7 +25,7 @@
         <activity android:name=".UpdateAddressActivity" />
         <activity android:name=".PaymentMethodActivity" />
         <activity android:name=".PaymentSuccess" />
-<!--        <activity android:name=".UserListActivity" />-->
+        <activity android:name=".UserListActivity" />
         <activity android:name=".AddUserActivity" />
         <activity android:name=".EditUserActivity" />
 
