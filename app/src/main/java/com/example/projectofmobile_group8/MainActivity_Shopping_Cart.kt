@@ -15,7 +15,7 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
     private lateinit var btnPurchase: Button
     private lateinit var productAdapter: ProductAdapter
 
-    // Danh sách sản phẩm
+    // Danh sách sản phẩm trong giỏ hàng
     private val productList = arrayListOf(
         Product("Nike Air Force 1 Low", "2.500.000 vnd", 1, 2500000),
         Product("Adidas UltraBoost", "3.200.000 vnd", 1, 3200000),
