@@ -3,6 +3,7 @@ package com.example.projectofmobile_group8
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
@@ -14,6 +15,7 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
     private lateinit var tvTotalPrice: TextView
     private lateinit var btnPurchase: Button
     private lateinit var productAdapter: ProductAdapter
+    private lateinit var imgtrove: ImageView
 
     // Danh sách sản phẩm trong giỏ hàng
     private val productList = arrayListOf(
@@ -36,7 +38,7 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
         listView = findViewById(R.id.lv_products)
         tvTotalPrice = findViewById(R.id.tv_total_price)
         btnPurchase = findViewById(R.id.btn_purchase)
-
+        imgtrove = findViewById(R.id.imgtrove)
         // Thiết lập Adapter
         productAdapter = ProductAdapter(
             this,
@@ -49,6 +51,11 @@ class MainActivity_Shopping_Cart : AppCompatActivity() {
     }
 
     private fun setEvent() {
+
+        imgtrove.setOnClickListener {
+            val intent = Intent(this, ProductList::class.java)
+            startActivity(intent)
+        }
         // Xử lý sự kiện khi nhấn nút "Mua hàng"
         btnPurchase.setOnClickListener {
             if (productList.isNotEmpty()) {

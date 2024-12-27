@@ -71,7 +71,7 @@ class MainActivity_Login : AppCompatActivity() {
                     // Chuyển màn hình dựa trên id_role
                     val intent = when (idRole) {
                         1 -> Intent(this, UserListActivity::class.java)
-                        2 -> Intent(this, MainActivity_Register::class.java)
+                        2 -> Intent(this, ProductList::class.java)
                         else -> {
                             Toast.makeText(this, "Không xác định quyền", Toast.LENGTH_SHORT).show()
                             return@setOnClickListener

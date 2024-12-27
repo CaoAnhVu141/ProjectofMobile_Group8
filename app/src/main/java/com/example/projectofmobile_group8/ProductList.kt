@@ -1,11 +1,13 @@
 package com.example.projectofmobile_group8
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
@@ -20,6 +22,7 @@ class ProductList : AppCompatActivity() {
     private lateinit var filteredProductList: MutableList<HomeProduct>
     private lateinit var searchEditText: EditText
     private lateinit var tabLayout: TabLayout
+    private lateinit var imgtrove: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +38,7 @@ class ProductList : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         searchEditText = findViewById(R.id.searchEditText)
         tabLayout = findViewById(R.id.tabLayout)
-
+        imgtrove = findViewById(R.id.overflowMenu)
         // Thiết lập Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -70,6 +73,11 @@ class ProductList : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+        imgtrove.setOnClickListener{
+            val intent = Intent(this, MainActivity_Shopping_Cart::class.java)
+            startActivity(intent)
+        }
     }
 
     // Xử lý chọn Tab
@@ -119,7 +127,12 @@ class ProductList : AppCompatActivity() {
         if (query.isEmpty()) {
             filteredProductList.addAll(productList)
         } else {
-            filteredProductList.addAll(productList.filter { it.name.contains(query, ignoreCase = true) })
+            filteredProductList.addAll(productList.filter {
+                it.name.contains(
+                    query,
+                    ignoreCase = true
+                )
+            })
         }
         productAdapter.notifyDataSetChanged()
     }
@@ -137,10 +150,42 @@ class ProductList : AppCompatActivity() {
     // Tạo danh sách sản phẩm mẫu
     private fun createProductList(): MutableList<HomeProduct> {
         return mutableListOf(
-            HomeProduct("Nike1", 19.99, "Cotton T-shirt", R.drawable.giay, listOf(R.drawable.giay, R.drawable.giay2, R.drawable.giay3), sales = 50, addedDate = 1700000000000),
-            HomeProduct("Nike2", 49.99, "Blue denim jeans", R.drawable.giay2, listOf(R.drawable.giay2, R.drawable.giay, R.drawable.giay3), sales = 120, addedDate = 1700100000000),
-            HomeProduct("Nike3", 59.99, "Winter Jacket", R.drawable.giay3, listOf(R.drawable.giay3, R.drawable.giay, R.drawable.giay2), sales = 70, addedDate = 1699900000000),
-            HomeProduct("Nike4", 79.99, "Running Shoes", R.drawable.giay, listOf(R.drawable.giay, R.drawable.giay3, R.drawable.giay2), sales = 30, addedDate = 1699800000000)
+            HomeProduct(
+                "Nike1",
+                19.99,
+                "Cotton T-shirt",
+                R.drawable.giay,
+                listOf(R.drawable.giay, R.drawable.giay2, R.drawable.giay3),
+                sales = 50,
+                addedDate = 1700000000000
+            ),
+            HomeProduct(
+                "Nike2",
+                49.99,
+                "Blue denim jeans",
+                R.drawable.giay2,
+                listOf(R.drawable.giay2, R.drawable.giay, R.drawable.giay3),
+                sales = 120,
+                addedDate = 1700100000000
+            ),
+            HomeProduct(
+                "Nike3",
+                59.99,
+                "Winter Jacket",
+                R.drawable.giay3,
+                listOf(R.drawable.giay3, R.drawable.giay, R.drawable.giay2),
+                sales = 70,
+                addedDate = 1699900000000
+            ),
+            HomeProduct(
+                "Nike4",
+                79.99,
+                "Running Shoes",
+                R.drawable.giay,
+                listOf(R.drawable.giay, R.drawable.giay3, R.drawable.giay2),
+                sales = 30,
+                addedDate = 1699800000000
+            )
         )
     }
 
@@ -151,6 +196,7 @@ class ProductList : AppCompatActivity() {
                 onBackPressed()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
